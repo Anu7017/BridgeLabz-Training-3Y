@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive YouTube (percentage)</title>
+  <style>
+    /* Center page and give some breathing room */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 2% 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Responsive video container using only percentages */
+    .video {
+      width: 80%;               /* percentage width */
+      padding-bottom: 56.25%;   /* percentage used to preserve 16:9 aspect ratio */
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;    /* percentage width */
+      height: 100%;   /* percentage height */
+      border: 0;
+    }
+
+    /* Make container narrower on small screens */
+    @media (max-width: 600px) {
+      .video { width: 95%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="video">
+    <!-- Replace the src value with any YouTube video ID you want -->
+    <iframe
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</body>
+</html>
